@@ -115,7 +115,7 @@ class MainProgram {
     private static int findMaximum(int[] array) {
         int max = array[0];
         for (int i = 1; i <= array.length; i++) {
-            if (max < array[i]){
+            if (max < array[i]) {
                 max = array[i];
             }
         }
@@ -133,7 +133,7 @@ class MainProgram {
     private static int findMaximumIndex(int[] array) {
         int sum = 0;
         for (int i = array.length; i <= array.length; i++) {
-            if(array[i] == max){
+            if (array[i] == max) {
                 index = i;
             }
 
@@ -151,12 +151,12 @@ class MainProgram {
         int max = findMaximum(array);
         int frequency = 0;
 
-            int frequency = 0;
-            for(int i = 0; i < array.length; i++){
-                if(array[i] == max){
-                    frequency++;
-                }
+        int frequency = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == max) {
+                frequency++;
             }
+        }
         return frequency;
     }
 
@@ -167,39 +167,55 @@ class MainProgram {
      * übergeben bekommt. Die Methode isSorted soll true zurückgeben, falls die im Array enthaltenen Werte aufsteigend sortiert sind.
      * Sonst soll false zurückgegeben werden.
      */
-    private static boolean isSorted(int[] array){
-        if(array.length < 2) return true;
+    private static boolean isSorted(int[] array) {
+        if (array.length < 2) return true;
 
-        for(int i= 0; i < array.length - 1; i++){
-            if(array[i] > array[i+1]);
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) ;
             return false;
         }
-
 
 
         return true;
     }
 
 
-
-    /** 8. Palindrome
-         * Ein Palindrom ist eine Folge von int-Werten, die vorwärts und rückwärts identisch gelesen werden kann.
-         * Beispiele: 12 34 78 34 12 oder 5 17 85 85 17 5
-         * Schreiben Sie eine Methode checkArray, die ein Array des Typs int übergeben bekommt und überprüft,
-         * ob es sich bei dem Array um ein Palindrom handelt.
-         * Die Methode soll einen Wert des Typs boolean zurückgeben.
-         */
-
-
-
-    /** 9. Erhöhen der Inhalte eines Feldes
-             * Schreiben Sie eine Methode increaseArray, die als Parameter ein Array des Typs int und einen int-Wert erhält.
-             * Die Methode increaseArray soll alle Werte des Arrays um den im zweiten Parameter übergebenen Wert erhöhen und als neues Array zurückgeben.
-             * Beispiel: Werden ein Array mit den Elementen 80,7,1,56,11,72,43,37 als erstes und der Wert 17 als zweites Argument übergeben,
-             * so soll ein neues(!) Array mit den Werten 97,24,18,73,28,89,60,54 zurückgegeben werden.
-             */
-
+    /**
+     * 8. Palindrome
+     * Ein Palindrom ist eine Folge von int-Werten, die vorwärts und rückwärts identisch gelesen werden kann.
+     * Beispiele: 12 34 78 34 12 oder 5 17 85 85 17 5
+     * Schreiben Sie eine Methode checkArray, die ein Array des Typs int übergeben bekommt und überprüft,
+     * ob es sich bei dem Array um ein Palindrom handelt.
+     * Die Methode soll einen Wert des Typs boolean zurückgeben.
+     */
+    private static boolean checkArray(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            if (array[i] != array[array.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
+    /**
+     * 9. Erhöhen der Inhalte eines Feldes
+     * Schreiben Sie eine Methode increaseArray, die als Parameter ein Array des Typs int und einen int-Wert erhält.
+     * Die Methode increaseArray soll alle Werte des Arrays um den im zweiten Parameter übergebenen Wert erhöhen und als neues Array zurückgeben.
+     * Beispiel: Werden ein Array mit den Elementen 80,7,1,56,11,72,43,37 als erstes und der Wert 17 als zweites Argument übergeben,
+     * so soll ein neues(!) Array mit den Werten 97,24,18,73,28,89,60,54 zurückgegeben werden.
+     */
+    private static int[] increaseArray(int[] array, int amount) {
+        //Neues Array erstellen
+        int[] newArray = new int[array.length];
+
+        //Neues Array füllen
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i] + amount;
+        }
+
+        //Neues Array zurückgeben
+        return newArray;
+    }
 }
 
