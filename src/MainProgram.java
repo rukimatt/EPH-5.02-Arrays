@@ -131,6 +131,8 @@ class MainProgram {
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
     private static int findMaximumIndex(int[] array) {
+        int max = findMaximum(array);
+        int index = 0;
         int sum = 0;
         for (int i = array.length; i <= array.length; i++) {
             if (array[i] == max) {
@@ -151,7 +153,6 @@ class MainProgram {
         int max = findMaximum(array);
         int frequency = 0;
 
-        int frequency = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == max) {
                 frequency++;
